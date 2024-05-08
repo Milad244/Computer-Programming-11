@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Computer Programming 11/Computer Programming 11.iml" filepath="$PROJECT_DIR$/Computer Programming 11/Computer Programming 11.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" filepath="$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Drawing with Text/Drawing with Text.iml" filepath="$PROJECT_DIR$/Drawing with Text/Drawing with Text.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExpressionAssignment/ExpressionAssignment.iml" filepath="$PROJECT_DIR$/ExpressionAssignment/ExpressionAssignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/General Programming/General Programming.iml" filepath="$PROJECT_DIR$/General Programming/General Programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/IdeaProjects.iml" filepath="$PROJECT_DIR$/.idea/IdeaProjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" filepath="$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rock Paper Scissors/Rock Paper Scissors.iml" filepath="$PROJECT_DIR$/Rock Paper Scissors/Rock Paper Scissors.iml" />
       <module fileurl="file://$PROJECT_DIR$/SchoolDatabase/SchoolDatabase.iml" filepath="$PROJECT_DIR$/SchoolDatabase/SchoolDatabase.iml" />
     </modules>
   </component>
