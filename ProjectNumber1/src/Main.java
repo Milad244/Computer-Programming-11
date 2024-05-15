@@ -2,13 +2,29 @@ import java.util.Scanner;
 public class Main {
     //Code your solution to problem number one here
     static int problemOne(String s){
-        //TODO
-        return -1;
+        String[] vowelArr = {"a", "e", "i", "o", "u"};
+        int vowelAmount = 0;
+        for (int i = 0; i < s.length(); i++){
+            for (int j = 0; j < vowelArr.length; j++){
+                if(s.substring(i, i + 1).equals(vowelArr[j])){
+                    vowelAmount ++;
+                }
+            }
+        }
+        System.out.println("Number of vowels: " + vowelAmount);
+        return vowelAmount;
     }
     //Code you problem number two here
     static int problemTwo(String s){
-        //TODO
-        return -1;
+        String keyWord = "bob";
+        int bobOccurrences = 0;
+        for (int i = 0; i < s.length(); i++){
+                if (i <= s.length() - 3 && (s.substring(i, i+3).equals(keyWord))){
+                    bobOccurrences ++;
+                }
+        }
+        System.out.println("Number of times bob occurs is: " + bobOccurrences);
+        return bobOccurrences;
     }
     //Code your solution to problem number 3 here
     static String problemThree(String s){

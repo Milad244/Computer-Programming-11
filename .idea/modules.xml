@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Add-Insert-Delete Arrays/Add-Insert-Delete Arrays.iml" filepath="$PROJECT_DIR$/Add-Insert-Delete Arrays/Add-Insert-Delete Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/Computer Programming 11/Computer Programming 11.iml" filepath="$PROJECT_DIR$/Computer Programming 11/Computer Programming 11.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" filepath="$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/Drawing with Text/Drawing with Text.iml" filepath="$PROJECT_DIR$/Drawing with Text/Drawing with Text.iml" />
@@ -10,7 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/IdeaProjects.iml" filepath="$PROJECT_DIR$/.idea/IdeaProjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" filepath="$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Rock Paper Scissors/Rock Paper Scissors.iml" filepath="$PROJECT_DIR$/Rock Paper Scissors/Rock Paper Scissors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rock Paper Scissors - Game Loop/Rock Paper Scissors - Game Loop.iml" filepath="$PROJECT_DIR$/Rock Paper Scissors - Game Loop/Rock Paper Scissors - Game Loop.iml" />
       <module fileurl="file://$PROJECT_DIR$/SchoolDatabase/SchoolDatabase.iml" filepath="$PROJECT_DIR$/SchoolDatabase/SchoolDatabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String encryption/String encryption.iml" filepath="$PROJECT_DIR$/String encryption/String encryption.iml" />
     </modules>
   </component>
 </project>
