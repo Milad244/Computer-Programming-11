@@ -18,14 +18,14 @@ public class Main {
 //      Creating scanner
         Scanner scan = new Scanner(System.in);
 
-//      Welcome print
+//      Welcome message/user instructions
         System.out.println(starLine + "\n" + welcomeText);
         System.out.println(askEncryptText);
         String phrase = scan.nextLine();
 
 //      Creating the loop
-        while (isRunning){
-            if (phrase.equals(quitText)){ //If user types 'quit' then program while loop gets ended (quits the program)
+        while (isRunning){ //Loop continues unless isRunning becomes false
+            if (phrase.equals(quitText)){ //If user types 'quit' then isRunning becomes false and the loop gets ended (quits the program)
                 isRunning = false;
             } else if (phrase.equals(decryptText)){ //If the user types 'decrypt' then the game switches to decrypt mode
                 System.out.println(askDecryptText); //Asking the user for the encrypted text to decrypt
@@ -54,15 +54,15 @@ public class Main {
                         if (i + 1 == phrase.length()){ //If the current letter index + 1 equals the total length (The last letter)
                             endLetter = phrase.substring(i, i + 1); //Then set the endLetter variable equal to the last letter
                             encryption += encryptEnd; //We then add the encryption end instead of the actual end letter
-                            encryption = endLetter + encryption; // Finally we create the final encryption by adding
-                            break;                                                              //the last letter to the beginning
+                            encryption = endLetter + encryption; // Finally we create the final encryption by adding the last letter to the beginning
+                            break;
                         } else{
                             encryption += currentLetter; //If it's not the last letter we can just add the letter to our encryption
                         }
                     }
                     System.out.println("Encrypted message: " + encryption + "\n" + starLine); //Printing the encrypted phrase
                 }
-                System.out.println(askEncryptText); //Asking the user for text to decrypt
+                System.out.println(askEncryptText); //Asking the user for another text to encrypt
                 phrase = scan.nextLine();
             }
         }

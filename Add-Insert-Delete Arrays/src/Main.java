@@ -3,7 +3,7 @@ public class Main {
     //This method loops through every string in the array to print all the values
     public static void printArray(String[] array){
         for (int i = 0; i < array.length; i++){ //Loop ends when it has gone through every item (array.length)
-            System.out.println(array[i]);
+            System.out.println(array[i]); //Prints each individual string
         }
         System.out.println("\n");
     }
@@ -11,7 +11,7 @@ public class Main {
     //This method adds a new string to the end of the array
     public static String[] addToArray(String[] originalArr, String newValue){
         String[] updatedArr = new String[originalArr.length + 1]; //updatedArr wil be the new array that has the new string to the end.
-        //Since we are adding a new string updatedArr must be able to contain 1 more than the original array.
+        //Since we are adding a new string, updatedArr must be able to contain 1 more than the original array.
         for (int i = 0; i < originalArr.length + 1; i++){ //Loop includes the 1 extra value by increasing length of original array by 1
             if (i == originalArr.length){ //If the current iteration of the loop equals the last loop, then we add the new string
                 updatedArr[i] = newValue;
