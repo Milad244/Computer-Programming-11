@@ -1,13 +1,14 @@
-public class Student {
-    //Fields
 
+// Student class. This class is used for keeping track of students
+public class Student {
+    // Fields. Variables in each Student Class
     private String firstName;
     private String lastName;
     private int grade;
     private int studentId;
     static int studentIdCount = 1;
 
-    // Default Constructor
+    // Default Constructor. Constructing default values for the Fields if initiating without params
     Student(){
         firstName = "unnamed";
         lastName = "unnamed";
@@ -16,7 +17,7 @@ public class Student {
         studentId++;
     }
 
-    // Constructor with params
+    // Constructor with params. Constructing the fields equal to the initiating params
     Student(String firstName, String lastName, int grade) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,7 +26,7 @@ public class Student {
         studentIdCount++;
     }
 
-    //Setters and Getters for firstName & lastName & grade & studentId
+    //Setters and Getters for firstName & lastName & grade & studentId. Setters are methods to set field values, and getters are methods to get field values
 
     public String getFirstName() {
         return firstName;
@@ -59,7 +60,7 @@ public class Student {
         this.studentId = studentId;
     }
 
-    //
+    // toString method to return a students information in the format asked of me
     public String toString() {
         return ("Name: " + firstName + " " + lastName + ", Grade: " + grade + ", Student Number: " + studentId + ".\n");
     }
