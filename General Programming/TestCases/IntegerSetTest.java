@@ -33,6 +33,7 @@ public class IntegerSetTest {
         testSet.insert(3);
         // check the number is in the set
         assertEquals(testSet.size(), 1);
+        assertTrue(testSet.contains(3));
         // insert same number again
         testSet.insert(3);
         // check the number did not get added into the set twice
