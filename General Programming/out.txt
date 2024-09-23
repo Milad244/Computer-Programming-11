@@ -1,1 +1,0 @@
-Writing to out file from IN fileThis is the input fileCopying to the output file
