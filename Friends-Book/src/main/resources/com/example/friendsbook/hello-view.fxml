@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,6 +14,14 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
    <children>
+      <Label fx:id="lblError" prefHeight="30.0" prefWidth="1469.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="-20.0" top="-20.0" />
+         </VBox.margin>
+      </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="Add New Friends: ">
@@ -66,15 +75,32 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="lblCreateError" prefHeight="30.0" prefWidth="1469.0" textAlignment="CENTER" textFill="RED">
+      <Label text="Friend Groups">
          <font>
-            <Font size="20.0" />
+            <Font size="25.0" />
          </font>
-         <VBox.margin>
-            <Insets bottom="-20.0" top="-20.0" />
-         </VBox.margin>
       </Label>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <ListView fx:id="listviewFriendGroupList" prefHeight="60.0" prefWidth="563.0" />
+            <Label text="Add New Friend Group: ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textNewFriendGroup" promptText="Work Friends">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#createNewFriendGroup" text="Add New Group">
+               <font>
+                  <Font size="17.5" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="62.0" prefWidth="1208.0">
          <children>
             <Label text="Friends List">
                <font>
@@ -101,16 +127,37 @@
       </HBox>
       <HBox prefHeight="591.0" prefWidth="1208.0">
          <children>
-            <VBox fx:id="vboxFriendsList" prefHeight="559.0" prefWidth="204.0" spacing="5.0" />
-            <HBox prefHeight="559.0" prefWidth="1032.0">
+            <ListView fx:id="listviewFriendsList" prefHeight="551.0" prefWidth="161.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ListView>
+            <HBox prefHeight="551.0" prefWidth="1024.0">
                <children>
-                  <Label fx:id="lblFriendInfo" alignment="TOP_LEFT" prefHeight="153.0" prefWidth="548.0" wrapText="true">
+                  <Label fx:id="lblFriendInfo" alignment="TOP_LEFT" prefHeight="153.0" prefWidth="580.0" wrapText="true">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <HBox fx:id="hboxFriendButtons" prefHeight="570.0" prefWidth="465.0" spacing="5.0" />
+                  <VBox prefHeight="532.0" prefWidth="479.0">
+                     <children>
+                        <HBox fx:id="hboxFriendOptions" prefHeight="122.0" prefWidth="479.0" spacing="3.0" />
+                        <VBox prefHeight="130.0" prefWidth="479.0">
+                           <children>
+                              <Label text="Group Option">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox fx:id="hboxGroupOptions" prefHeight="100.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
                </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
             </HBox>
          </children>
       </HBox>

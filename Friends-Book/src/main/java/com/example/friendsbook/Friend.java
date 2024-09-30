@@ -85,4 +85,12 @@ public class Friend {
             friendLvl --;
         }
     }
+
+    // Requires: nothing
+    // Modifies: nothing
+    // Effects: turns friend object into a string with all the information about your friend
+    @Override
+    public String toString() {
+        return "Your " + getFriendLvlString() + " " + getName() + " is " + getAge() + " and loves " + getFavouriteFood() + "!";
+    }
 }
