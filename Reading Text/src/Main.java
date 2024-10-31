@@ -37,8 +37,9 @@ public class Main {
     // Requires: text as an arraylist of strings (lines). Also, requires the word that will be searched as a string
     // Modifies: nothing
     // Effects: goes through each string (line) of the given text and returns every index the word was found as an arraylist of integers
+    // Note: The search is case sensitive
     public static ArrayList<Integer> searchWord(ArrayList<String> text, String word){
-        int currentIndex = 0;
+        int currentIndex = 1;
         int wordFoundCount = 0;
         int wordLength = word.length();
         ArrayList<Integer> foundIndexPositions = new ArrayList<>();
