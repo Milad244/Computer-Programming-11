@@ -9,6 +9,8 @@ public class Main {
         ArrayList<String> text = new ArrayList<>();
         FileReader fr = new FileReader("ProgrammingHistory.txt");
         BufferedReader br = new BufferedReader(fr);
+
+        // Adding each line of text from the file into an arraylist of strings
         String line;
         while ((line = br.readLine()) != null){
             text.add(line);
@@ -19,6 +21,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        // Loop that lets you search the text for words. Can quit the loop by typing 'q' or 'e'
         do{
             System.out.println("To exit the program type 'q' or 'e'. To search for a word, enter the word you wish to search for: ");
             String userInput = scan.next();
