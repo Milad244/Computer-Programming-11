@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -14,9 +15,20 @@ public class Main {
         }
         br.close();
 
-        String word = "that";
+        boolean quit = false;
 
-        ArrayList<Integer> wordFoundIndexPositions = searchWord(text, word);
+        Scanner scan = new Scanner(System.in);
+
+        do{
+            System.out.println("To exit the program type 'q' or 'e'. To search for a word, enter the word you wish to search for: ");
+            String userInput = scan.next();
+            if (userInput.equals("q") || userInput.equals("e")){
+                quit = true;
+            } else{
+                ArrayList<Integer> wordFoundIndexPositions = searchWord(text, userInput);
+            }
+        } while(!quit);
+
     }
 
     // Requires: text as an arraylist of strings (lines). Also, requires the word that will be searched as a string
