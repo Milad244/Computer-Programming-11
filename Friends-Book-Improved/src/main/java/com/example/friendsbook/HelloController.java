@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class HelloController {
 
+    public TextField textFileName;
     //fields
     private ArrayList<FriendGroup> friendGroups;
     private FriendGroup currentFriendGroup;
@@ -331,18 +332,108 @@ public class HelloController {
         }
     }
 
-    private void saveFriendStorage() throws IOException {
-        FileWriter fw = new FileWriter("FriendStorage.txt");
+    // Requires: text file name as a string
+    // Modifies: text file
+    // Effects: stores all the fields of friendsGroups into the given text file
+    private void saveFriendStorage(String fileName) throws IOException {
+        FileWriter fw = new FileWriter(fileName);
         BufferedWriter bw = new BufferedWriter(fw);
 
+        for (FriendGroup fg : friendGroups){
+            bw.write(fg.getGroupName() + "\r");
+
+            for (Friend f : fg.getFriends()){
+                bw.write(f.getName() + "\r");
+                bw.write(f.getAge() + "\r");
+                bw.write(f.getFavouriteFood() + "\r");
+                bw.write(f.getFriendLvl() + "\r");
+            }
+
+            bw.write("End Friends\r");
+        }
+
+        bw.write("End");
+        bw.close();
     }
 
+    // Requires: text file name as a string
+    // Modifies: this
+    // Effects: If existing, retrieves all the fields of friendsGroups from the given text file.
+    // Then, the current friendGroups get replaced by the retrieved ones. If the file does not exist, it gives error msg.
     private void loadFriendStorage(String fileName) throws IOException {
-        FileReader fr = new FileReader(fileName);
-        BufferedReader br = new BufferedReader(fr);
-        String line;
-        while ((line = br.readLine()) != null){
+        try{
+            FileReader fr = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fr);
 
+            ArrayList<FriendGroup> newFriendGroups = new ArrayList<>();
+            String line;
+            FriendGroup currentFriendGroupIteration = null;
+
+            while ((line = br.readLine()) != null){
+                if (line.equals("End")){
+                    break;
+                } else if (line.equals("End Friends")){
+                    if (currentFriendGroupIteration != null) {
+                        newFriendGroups.add(currentFriendGroupIteration);
+                        currentFriendGroup = currentFriendGroupIteration;
+                        currentFriendGroupIteration = null;
+                    }
+                } else if (currentFriendGroupIteration == null) {
+                    currentFriendGroupIteration = new FriendGroup(line);
+                } else{
+                    String friendName = line;
+                    int friendAge = Integer.parseInt(br.readLine());
+                    String friendFavouriteFood = br.readLine();
+                    int friendLevel = Integer.parseInt(br.readLine());
+
+                    Friend friend = new Friend(friendName, friendAge, friendFavouriteFood, friendLevel);
+                    currentFriendGroupIteration.addFriend(friend);
+                }
+            }
+
+            friendGroups = newFriendGroups;
+            displayGroupList();
+        } catch (Exception e){
+            lblError.setText("Save file does not exist");
+        }
+    }
+
+    // Requires: clicking on load button
+    // Modifies: javafx objects
+    // Effects: Retrieves the file name from the user text input.
+    // Then, if the file name passes its check, it resets the error text and runs the method that loads the file.
+    public void handleLoadFile(ActionEvent actionEvent) throws IOException {
+        String fileName = textFileName.getText();
+        if (fileNameCheck(fileName)){
+            lblError.setText("");
+            loadFriendStorage(fileName);
+        }
+    }
+
+    // Requires: text file name as a string
+    // Modifies: javafx objects
+    // Effects: returns true if the text file name passes all the checks. If not, returns false and gives the user an error msg
+    private boolean fileNameCheck(String fileName){
+        if (fileName.length() > 15){
+            lblError.setText("File name can't be over 15 characters");
+            return false;
+        } else if (fileName.isEmpty()){
+            lblError.setText("File name can't be empty");
+            return false;
+        } else{
+            return true;
+        }
+    }
+
+    // Requires: clicking on save button
+    // Modifies: javafx objects
+    // Effects: Retrieves the file name from the user text input.
+    // Then, if the file name passes its check, it resets the error text and runs the method that saves the file.
+    public void handleSaveFile(ActionEvent actionEvent) throws IOException {
+        String fileName = textFileName.getText();
+        if (fileNameCheck(fileName)){
+            lblError.setText("");
+            saveFriendStorage(fileName);
         }
     }
 }

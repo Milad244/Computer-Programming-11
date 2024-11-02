@@ -22,6 +22,26 @@
             <Insets bottom="-20.0" top="-20.0" />
          </VBox.margin>
       </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="Filename: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFileName" prefHeight="33.0" prefWidth="300.0" promptText="FriendsFile1" />
+            <Button mnemonicParsing="false" onAction="#handleLoadFile" text="Load">
+               <font>
+                  <Font size="17.5" />
+               </font>
+            </Button>
+            <Button layoutX="248.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSaveFile" text="Save">
+               <font>
+                  <Font size="17.5" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="Add New Friends: ">
