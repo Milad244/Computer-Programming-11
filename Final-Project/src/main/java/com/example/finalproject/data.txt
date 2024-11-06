@@ -1,1 +1,1 @@
-English 12 100.0falseClass 159.050.0Quiz 250.025.0End AssignmentsMath 12200.0falseQuiz 1100.025.0End AssignmentsONE100.0trueONEA99.0100.0End AssignmentsEnd
+Math 12300.0falseQuiz 1100.050.0Quiz 296.050.0Exam 186.0150.0End AssignmentsEnglish 12100.0trueEssay 194.040.0Essay 299.060.0End AssignmentsEnd

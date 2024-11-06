@@ -5,13 +5,16 @@ import java.util.ArrayList;
 
 public class DataHandler {
     // Fields
-    String dataPath;
+    private String dataPath;
 
     //Methods
     DataHandler() throws IOException {
         dataPath = "src\\main\\java\\com\\example\\finalproject\\data.txt";
     }
 
+    // Requires: An arraylist of Class
+    // Modifies: data.txt
+    // Effects: saves the data from the arraylist into the data.txt file
     public void saveData(ArrayList<Class> classes) throws IOException {
         FileWriter fw = new FileWriter(dataPath);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -34,6 +37,9 @@ public class DataHandler {
         bw.close();
     }
 
+    // Requires: nothing
+    // Modifies: nothing
+    // Effects: returns the arraylist of Class from the data.txt file
     public ArrayList<Class> getData() throws IOException {
         FileReader fr = new FileReader(dataPath);
         BufferedReader br = new BufferedReader(fr);
