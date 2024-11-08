@@ -8,6 +8,10 @@ public class DataHandler {
     private String dataPath;
 
     //Methods
+
+    // Requires: nothing
+    // Modifies: this
+    // Effects: initializes the dataHandler. Gets the relative path of data.txt (the text file that saves the user data)
     DataHandler() throws IOException {
         dataPath = "src\\main\\java\\com\\example\\finalproject\\data.txt";
     }

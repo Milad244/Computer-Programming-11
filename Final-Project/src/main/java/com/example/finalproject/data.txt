@@ -1,1 +1,1 @@
-Math 12300.0falseQuiz 1100.050.0Quiz 296.050.0Exam 186.0150.0End AssignmentsEnglish 12100.0trueEssay 194.040.0Essay 299.060.0End AssignmentsEnd
+Math 12150.0falseQuiz 185.010.0Test 140.0100.0End AssignmentsEnglish 12100.0trueEssay50.050.0End AssignmentsEnd

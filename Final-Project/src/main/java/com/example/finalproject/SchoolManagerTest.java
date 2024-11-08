@@ -35,15 +35,15 @@ public class SchoolManagerTest {
         boolean titleNonDuplicateCheck = testSet.classTitleCheck("Not Dup Name");
         assertTrue(titleNonDuplicateCheck);
 
-        // Testing max weight checks
-        boolean maxWeightGoodCheck = testSet.classMaxWeightCheck("50");
-        assertTrue(maxWeightGoodCheck);
-        boolean maxWeightNegativeCheck = testSet.classMaxWeightCheck("-50");
-        assertFalse(maxWeightNegativeCheck);
-        boolean maxWeightHighCheck = testSet.classMaxWeightCheck("1500");
-        assertFalse(maxWeightHighCheck);
-        boolean maxWeightStringCheck = testSet.classMaxWeightCheck("Haha");
-        assertFalse(maxWeightStringCheck);
+        // Testing total weight checks
+        boolean totalWeightGoodCheck = testSet.classTotalWeightCheck("50");
+        assertTrue(totalWeightGoodCheck);
+        boolean totalWeightNegativeCheck = testSet.classTotalWeightCheck("-50");
+        assertFalse(totalWeightNegativeCheck);
+        boolean totalWeightHighCheck = testSet.classTotalWeightCheck("1500");
+        assertFalse(totalWeightHighCheck);
+        boolean totalWeightStringCheck = testSet.classTotalWeightCheck("Haha");
+        assertFalse(totalWeightStringCheck);
     }
 
     @Test

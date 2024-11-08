@@ -1,7 +1,6 @@
 package com.example.finalproject;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -13,7 +12,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class HelloController {
-    // fields
+    // Fields
+
     // Javafx objects
     public Label lblError;
     public ListView listviewClasses;
@@ -31,11 +31,11 @@ public class HelloController {
     private Assignment currentAssignment;
     private DataHandler dataHandler;
 
-    // methods
+    // Methods
 
     // Requires: error text for the user as a string
     // Modifies: javafx objects
-    // Effects: checks if the label exists. If so, gives the user the error msg. (Made this because my Junit tests were getting bullied)
+    // Effects: checks if the label exists. If so, gives the user the error msg. (lbl is null in my junit tests)
     public void setLblError(String errorText){
         if (lblError != null){
             lblError.setText(errorText);
@@ -52,27 +52,27 @@ public class HelloController {
 
     // Requires: nothing
     // Modifies: this
-    // Effects: initializes the classes. (Made this because my Junit tests were getting bullied)
+    // Effects: initializes the classes. (Made this for my Junit tests)
     public void initializeTest(){
         classes = new ArrayList<>();
     }
 
     // Requires: clicking on add class btn
     // Modifies: this and javafx objects
-    // Effects: commits adding and displaying the class if the params pass their respective checks
+    // Effects: calls the commitAddClass function and displays the class if the params pass their respective checks
     public void addClass(ActionEvent actionEvent) {
         String newClassTitle = textClassTitle.getText();
         String stringNewTotalWeight = textClassTotalWeight.getText();
         textClassTitle.clear();
         textClassTotalWeight.clear();
 
-        if (classTitleCheck(newClassTitle) && classMaxWeightCheck(stringNewTotalWeight)){
+        if (classTitleCheck(newClassTitle) && classTotalWeightCheck(stringNewTotalWeight)){
             commitAddClass(newClassTitle, stringNewTotalWeight);
             displayClasses();
         }
     }
 
-    // Requires: new class title as a string, new class total weight as a string
+    // Requires: new class title as a string and new class total weight as a string
     // Modifies: this and javafx objects
     // Effects: commits adding the class
     public void commitAddClass(String newClassTitle, String stringNewTotalWeight){
@@ -108,7 +108,7 @@ public class HelloController {
     // Requires: new total weight as a string
     // Modifies: this and javafx objects
     // Effects: returns true if the new total weight passes all the checks. If not, returns false and gives the user an error msg
-    public boolean classMaxWeightCheck(String newTotalWeight){
+    public boolean classTotalWeightCheck(String newTotalWeight){
         try{
             double potentialTotalMaxWeight = Double.parseDouble(newTotalWeight);
             if (potentialTotalMaxWeight < 0){
@@ -129,7 +129,7 @@ public class HelloController {
 
     // Requires: clicking on add assignment btn
     // Modifies: this and javafx objects
-    // Effects: commits adding and displaying the assignment if the params pass their respective checks
+    // Effects: calls the commitAddAssignment function and displays the assignment if the params pass their respective checks
     public void addAssignment(ActionEvent actionEvent) {
         String newAssignmentTitle = textAssignmentTitle.getText();
         String stringNewAssignmentMark = textAssignmentMark.getText();
@@ -199,7 +199,7 @@ public class HelloController {
         }
     }
 
-    // Requires: new total weight as a string
+    // Requires: new assignment weight as a string
     // Modifies: this and javafx objects
     // Effects: returns true if the new total weight passes all the checks. If not, returns false and gives the user an error msg
     public boolean assignmentWeightCheck(String newAssignmentWeight){
@@ -223,7 +223,7 @@ public class HelloController {
     }
 
     // Requires: nothing
-    // Modifies: nothing but does call setLblError which modifies javafx objects
+    // Modifies: javafx objects
     // Effects: checks if currentClass is null. If so, returns false and gives the user an error msg. If not, returns true.
     public boolean selectedClassCheck(){
         if (currentClass == null) {
@@ -400,7 +400,7 @@ public class HelloController {
                 }
                 reload();
             });
-            vboxClassInfo.getChildren().add(assignmentDeleteButton);
+            vboxAssignmentInfo.getChildren().add(assignmentDeleteButton);
         }
     }
 }
